@@ -1,12 +1,20 @@
-<div class="geoposition-widget" data-map-widget-height="{{ config.map_widget_height }}" data-map-options="{{ config.map_options }}" data-marker-options="{{ config.marker_options }}" data-api-key="{{ config.api_key }}">
+<div class="geoposition-widget" id="{{widget.attrs.id}}" data-map-widget-height="{{ widget.config.map_widget_height }}" data-map-options='{{ widget.config.map_options }}' data-marker-options='{{ widget.config.marker_options }}' data-api-key="{{ widget.config.api_key }}">
     <table>
         <tr>
-            <td>{{ latitude.label|capfirst }}</td>
-            <td>{{ latitude.html }}</td>
+            <td>{{ widget.latitude.label|capfirst }}</td>
+            <td>{{ widget.latitude.html }}</td>
         </tr>
         <tr>
-            <td>{{ longitude.label|capfirst }}</td>
-            <td>{{ longitude.html }}</td>
+            <td>{{ widget.longitude.label|capfirst }}</td>
+            <td>{{ widget.longitude.html }}</td>
         </tr>
     </table>
 </div>
+
+<!--{% load l10n %}
+<div class="geoposition-widget" id="{{widget.attrs.id}}" data-map-widget-height="{{ widget.config.map_widget_height }}" data-map-options='{{ widget.config.map_options }}' data-marker-options='{{ widget.config.marker_options }}' data-api-key="{{ widget.config.api_key }}">
+    {{ widget.latitude.label|capfirst }}:
+    <input type="text" name="{{widget.name}}_0" class="{{widget.attrs.class}}" value="{{ widget.latitude.html|unlocalize }}" />
+    {{ widget.longitude.label|capfirst }}:
+    <input type="text" name="{{widget.name}}_1" class="{{widget.attrs.class}}" value="{{ widget.longitude.html|unlocalize }}" />
+</div>-->
